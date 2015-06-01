@@ -1,0 +1,12 @@
+node_modules
+*.nddb
+_*
+Session.vim
+*.tar.gz
+~*
+*~
+\#*
+.\#*
+auth/descil.conf.js
+*.DS_Store
+.DS_Store
