@@ -20,7 +20,5 @@
   "engines": {
     "node": ">= 0.10"
   },
-  "files": [
-    "LICENSE",
-  ]
+  "files": [ "LICENSE" ]
 }
