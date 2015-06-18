@@ -7,5 +7,5 @@
  *
  * http://www.nodegame.org
  */
-module.exports = require('./lib/requirements.js');
+module.exports = require('./lib/requirements-callbacks.js');
 
