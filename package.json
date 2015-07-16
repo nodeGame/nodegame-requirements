@@ -12,6 +12,10 @@
     "realtime",
     "requirements"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nodeGame/nodegame-requirements.git"
+  },
   "license": "MIT",
   "main": "index.js",
   "devDependencies": {
