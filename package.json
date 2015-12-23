@@ -1,7 +1,7 @@
 {
   "name": "nodegame-requirements",
   "description": "Collections of requirement-checking functions for connecting clients in nodeGame",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "author": "Stefano Balietti <futur.dorko@gmail.com>",
   "keywords": [
     "nodegame",
