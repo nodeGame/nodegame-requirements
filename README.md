@@ -1,9 +1,7 @@
 [nodeGame](https://www.nodegame.org) requirements checking functions.
 
-Description to be added.
+Collection of default requirements functions.
 
 ## License
 
 [MIT](LICENSE)
-
-
