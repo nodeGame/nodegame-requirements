@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 0.3.0
+- Test: viewport size (min and max).
+
 ## 0.2.0
 - Improved speedTest (avoided multiple response).
 
