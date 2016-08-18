@@ -18,6 +18,9 @@
   },
   "license": "MIT",
   "main": "index.js",
+  "dependencies": {
+    "ua-parser-js": ">= 0.7.10"
+  },
   "devDependencies": {
     "mocha": "~2.1.0"
   },
