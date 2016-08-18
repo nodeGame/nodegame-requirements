@@ -334,115 +334,6 @@ module.exports = function(uastring, extensions) {
                 /(mosaic)[\/\s]([\w\.]+)/i                                          // Mosaic
         ], [NAME, VERSION]
 
-                   /* /////////////////////
-                   // Media players BEGIN
-                   ////////////////////////
-
-                   , [
-
-                   /(apple(?:coremedia|))\/((\d+)[\w\._]+)/i,                          // Generic Apple CoreMedia
-                   /(coremedia) v((\d+)[\w\._]+)/i
-                   ], [NAME, VERSION], [
-
-                   /(aqualung|lyssna|bsplayer)\/((\d+)?[\w\.-]+)/i                     // Aqualung/Lyssna/BSPlayer
-                   ], [NAME, VERSION], [
-
-                   /(ares|ossproxy)\s((\d+)[\w\.-]+)/i                                 // Ares/OSSProxy
-                   ], [NAME, VERSION], [
-
-                   /(audacious|audimusicstream|amarok|bass|core|dalvik|gnomemplayer|music on console|nsplayer|psp-internetradioplayer|videos)\/((\d+)[\w\.-]+)/i,
-                   // Audacious/AudiMusicStream/Amarok/BASS/OpenCORE/Dalvik/GnomeMplayer/MoC
-                   // NSPlayer/PSP-InternetRadioPlayer/Videos
-                   /(clementine|music player daemon)\s((\d+)[\w\.-]+)/i,               // Clementine/MPD
-                   /(lg player|nexplayer)\s((\d+)[\d\.]+)/i,
-                   /player\/(nexplayer|lg player)\s((\d+)[\w\.-]+)/i                   // NexPlayer/LG Player
-                   ], [NAME, VERSION], [
-                   /(nexplayer)\s((\d+)[\w\.-]+)/i                                     // Nexplayer
-                   ], [NAME, VERSION], [
-
-                   /(flrp)\/((\d+)[\w\.-]+)/i                                          // Flip Player
-                   ], [[NAME, 'Flip Player'], VERSION], [
-
-                   /(fstream|nativehost|queryseekspider|ia-archiver|facebookexternalhit)/i
-                   // FStream/NativeHost/QuerySeekSpider/IA Archiver/facebookexternalhit
-                   ], [NAME], [
-
-                   /(gstreamer) souphttpsrc (?:\([^\)]+\)){0,1} libsoup\/((\d+)[\w\.-]+)/i
-                   // Gstreamer
-                   ], [NAME, VERSION], [
-
-                   /(htc streaming player)\s[\w_]+\s\/\s((\d+)[\d\.]+)/i,              // HTC Streaming Player
-                   /(java|python-urllib|python-requests|wget|libcurl)\/((\d+)[\w\.-_]+)/i,
-                   // Java/urllib/requests/wget/cURL
-                   /(lavf)((\d+)[\d\.]+)/i                                             // Lavf (FFMPEG)
-                   ], [NAME, VERSION], [
-
-                   /(htc_one_s)\/((\d+)[\d\.]+)/i                                      // HTC One S
-                   ], [[NAME, /_/g, ' '], VERSION], [
-
-                   /(mplayer)(?:\s|\/)(?:(?:sherpya-){0,1}svn)(?:-|\s)(r\d+(?:-\d+[\w\.-]+){0,1})/i
-                   // MPlayer SVN
-                   ], [NAME, VERSION], [
-
-                   /(mplayer)(?:\s|\/|[unkow-]+)((\d+)[\w\.-]+)/i                      // MPlayer
-                   ], [NAME, VERSION], [
-
-                   /(mplayer)/i,                                                       // MPlayer (no other info)
-                   /(yourmuze)/i,                                                      // YourMuze
-                   /(media player classic|nero showtime)/i                             // Media Player Classic/Nero ShowTime
-                   ], [NAME], [
-
-                   /(nero (?:home|scout))\/((\d+)[\w\.-]+)/i                           // Nero Home/Nero Scout
-                   ], [NAME, VERSION], [
-
-                   /(nokia\d+)\/((\d+)[\w\.-]+)/i                                      // Nokia
-                   ], [NAME, VERSION], [
-
-                   /\s(songbird)\/((\d+)[\w\.-]+)/i                                    // Songbird/Philips-Songbird
-                   ], [NAME, VERSION], [
-
-                   /(winamp)3 version ((\d+)[\w\.-]+)/i,                               // Winamp
-                   /(winamp)\s((\d+)[\w\.-]+)/i,
-                   /(winamp)mpeg\/((\d+)[\w\.-]+)/i
-                   ], [NAME, VERSION], [
-
-                   /(ocms-bot|tapinradio|tunein radio|unknown|winamp|inlight radio)/i  // OCMS-bot/tap in radio/tunein/unknown/winamp (no other info)
-                   // inlight radio
-                   ], [NAME], [
-
-                   /(quicktime|rma|radioapp|radioclientapplication|soundtap|totem|stagefright|streamium)\/((\d+)[\w\.-]+)/i
-                   // QuickTime/RealMedia/RadioApp/RadioClientApplication/
-                   // SoundTap/Totem/Stagefright/Streamium
-                   ], [NAME, VERSION], [
-
-                   /(smp)((\d+)[\d\.]+)/i                                              // SMP
-                   ], [NAME, VERSION], [
-
-                   /(vlc) media player - version ((\d+)[\w\.]+)/i,                     // VLC Videolan
-                   /(vlc)\/((\d+)[\w\.-]+)/i,
-                   /(xbmc|gvfs|xine|xmms|irapp)\/((\d+)[\w\.-]+)/i,                    // XBMC/gvfs/Xine/XMMS/irapp
-                   /(foobar2000)\/((\d+)[\d\.]+)/i,                                    // Foobar2000
-                   /(itunes)\/((\d+)[\d\.]+)/i                                         // iTunes
-                   ], [NAME, VERSION], [
-
-                   /(wmplayer)\/((\d+)[\w\.-]+)/i,                                     // Windows Media Player
-                   /(windows-media-player)\/((\d+)[\w\.-]+)/i
-                   ], [[NAME, /-/g, ' '], VERSION], [
-
-                   /windows\/((\d+)[\w\.-]+) upnp\/[\d\.]+ dlnadoc\/[\d\.]+ (home media server)/i
-                   // Windows Media Server
-                   ], [VERSION, [NAME, 'Windows']], [
-
-                   /(com\.riseupradioalarm)\/((\d+)[\d\.]*)/i                          // RiseUP Radio Alarm
-                   ], [NAME, VERSION], [
-
-                   /(rad.io)\s((\d+)[\d\.]+)/i,                                        // Rad.io
-                   /(radio.(?:de|at|fr))\s((\d+)[\d\.]+)/i
-                   ], [[NAME, 'rad.io'], VERSION]
-
-                   //////////////////////
-                   // Media players END
-                   ////////////////////*/
 
                   ],
 
@@ -608,66 +499,7 @@ module.exports = function(uastring, extensions) {
                 /\s(mobile)[;\/\s]/i                                                // Unidentifiable Mobile
         ], [[TYPE, util.lowerize], VENDOR, MODEL]
 
-                  /*//////////////////////////
-                  // TODO: move to string map
-                  ////////////////////////////
-
-                  /(C6603)/i                                                          // Sony Xperia Z C6603
-                  ], [[MODEL, 'Xperia Z C6603'], [VENDOR, 'Sony'], [TYPE, MOBILE]], [
-                  /(C6903)/i                                                          // Sony Xperia Z 1
-                  ], [[MODEL, 'Xperia Z 1'], [VENDOR, 'Sony'], [TYPE, MOBILE]], [
-
-                  /(SM-G900[F|H])/i                                                   // Samsung Galaxy S5
-                  ], [[MODEL, 'Galaxy S5'], [VENDOR, 'Samsung'], [TYPE, MOBILE]], [
-                  /(SM-G7102)/i                                                       // Samsung Galaxy Grand 2
-                  ], [[MODEL, 'Galaxy Grand 2'], [VENDOR, 'Samsung'], [TYPE, MOBILE]], [
-                  /(SM-G530H)/i                                                       // Samsung Galaxy Grand Prime
-                  ], [[MODEL, 'Galaxy Grand Prime'], [VENDOR, 'Samsung'], [TYPE, MOBILE]], [
-                  /(SM-G313HZ)/i                                                      // Samsung Galaxy V
-                  ], [[MODEL, 'Galaxy V'], [VENDOR, 'Samsung'], [TYPE, MOBILE]], [
-                  /(SM-T805)/i                                                        // Samsung Galaxy Tab S 10.5
-                  ], [[MODEL, 'Galaxy Tab S 10.5'], [VENDOR, 'Samsung'], [TYPE, TABLET]], [
-                  /(SM-G800F)/i                                                       // Samsung Galaxy S5 Mini
-                  ], [[MODEL, 'Galaxy S5 Mini'], [VENDOR, 'Samsung'], [TYPE, MOBILE]], [
-                  /(SM-T311)/i                                                        // Samsung Galaxy Tab 3 8.0
-                  ], [[MODEL, 'Galaxy Tab 3 8.0'], [VENDOR, 'Samsung'], [TYPE, TABLET]], [
-
-                  /(R1001)/i                                                          // Oppo R1001
-                  ], [MODEL, [VENDOR, 'OPPO'], [TYPE, MOBILE]], [
-                  /(X9006)/i                                                          // Oppo Find 7a
-                  ], [[MODEL, 'Find 7a'], [VENDOR, 'Oppo'], [TYPE, MOBILE]], [
-                  /(R2001)/i                                                          // Oppo YOYO R2001
-                  ], [[MODEL, 'Yoyo R2001'], [VENDOR, 'Oppo'], [TYPE, MOBILE]], [
-                  /(R815)/i                                                           // Oppo Clover R815
-                  ], [[MODEL, 'Clover R815'], [VENDOR, 'Oppo'], [TYPE, MOBILE]], [
-                  /(U707)/i                                                          // Oppo Find Way S
-                  ], [[MODEL, 'Find Way S'], [VENDOR, 'Oppo'], [TYPE, MOBILE]], [
-
-                  /(T3C)/i                                                            // Advan Vandroid T3C
-                  ], [MODEL, [VENDOR, 'Advan'], [TYPE, TABLET]], [
-                  /(ADVAN T1J\+)/i                                                    // Advan Vandroid T1J+
-                  ], [[MODEL, 'Vandroid T1J+'], [VENDOR, 'Advan'], [TYPE, TABLET]], [
-                  /(ADVAN S4A)/i                                                      // Advan Vandroid S4A
-                  ], [[MODEL, 'Vandroid S4A'], [VENDOR, 'Advan'], [TYPE, MOBILE]], [
-
-                  /(V972M)/i                                                          // ZTE V972M
-                  ], [MODEL, [VENDOR, 'ZTE'], [TYPE, MOBILE]], [
-
-                  /(i-mobile)\s(IQ\s[\d\.]+)/i                                        // i-mobile IQ
-                  ], [VENDOR, MODEL, [TYPE, MOBILE]], [
-                  /(IQ6.3)/i                                                          // i-mobile IQ IQ 6.3
-                  ], [[MODEL, 'IQ 6.3'], [VENDOR, 'i-mobile'], [TYPE, MOBILE]], [
-                  /(i-mobile)\s(i-style\s[\d\.]+)/i                                   // i-mobile i-STYLE
-                  ], [VENDOR, MODEL, [TYPE, MOBILE]], [
-                  /(i-STYLE2.1)/i                                                     // i-mobile i-STYLE 2.1
-                  ], [[MODEL, 'i-STYLE 2.1'], [VENDOR, 'i-mobile'], [TYPE, MOBILE]], [
-
-                  /(mobiistar touch LAI 512)/i                                        // mobiistar touch LAI 512
-                  ], [[MODEL, 'Touch LAI 512'], [VENDOR, 'mobiistar'], [TYPE, MOBILE]], [
-
-                  /////////////
-                  // END TODO
-                  ///////////*/
+            
 
                  ],
 
@@ -755,10 +587,6 @@ module.exports = function(uastring, extensions) {
              ]
     };
 
-    // Commented out.
-    // if (!(this instanceof UAParser)) {
-    //    return new UAParser(uastring, extensions).getResult();
-    // }
 
     var ua = uastring || ((window && window.navigator && window.navigator.userAgent) ? window.navigator.userAgent : EMPTY);
     var rgxmap = extensions ? util.extend(regexes, extensions) : regexes;
