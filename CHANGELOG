@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 3.5.0
+- Improved warning on slow connection.
+- NodeGame Vesion Upgrade.
+
 ## 3.0.0
 - NodeGame Version Upgrade.
 
