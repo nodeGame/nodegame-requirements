@@ -1,37 +1,7 @@
 {
-<<<<<<< HEAD
-  "name": "nodegame-requirements",
-  "description": "Collections of requirement-checking functions for connecting clients in nodeGame",
-  "version": "3.5.0",
-  "author": "Stefano Balietti <futur.dorko@gmail.com>",
-  "keywords": [
-    "nodegame",
-    "framework",
-    "web",
-    "game",
-    "multiplayer",
-    "realtime",
-    "requirements"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/nodeGame/nodegame-requirements.git"
-  },
-  "license": "MIT",
-  "main": "index.js",
-  "dependencies": {
-    "ua-parser-js": ">= 0.7.10"
-  },
-  "devDependencies": {
-    "mocha": "~2.1.0"
-  },
-  "engines": {
-    "node": ">= 0.10"
-  }
-=======
     "name": "nodegame-requirements",
     "description": "Collections of requirement-checking functions for connecting clients in nodeGame",
-    "version": "3.0.0",
+    "version": "4.0.0",
     "author": "Stefano Balietti <futur.dorko@gmail.com>",
     "keywords": [
         "nodegame",
@@ -56,7 +26,6 @@
         "should": "4.4.1"        
     },
     "engines": {
-        "node": ">= 0.10"
+        "node": ">= 6.0.0"
     }
->>>>>>> v4
 }

@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 4.0.0
+- Updated to new release of nodeGame 4.0.
+	
 ## 3.5.0
 - Improved warning on slow connection.
 - NodeGame Vesion Upgrade.
